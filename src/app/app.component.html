@@ -1,0 +1,27 @@
+<p>Hi {{myName}} </p>
+<button (click)="changeName()">Change name</button>
+<br>
+<p>Number is {{myNo}} </p>
+<button on-click="incrementNo()">Increment</button>
+<br>
+<h1>Names of friends</h1>
+<label>Enter name: </label> 
+<input type="text" [(ngModel)]="newName" />
+<button (click)="addName()">click here to add</button><br>
+<button (click)="deleteName()">click here to delete latest record</button> <br>
+<button (click)="deleteThis()">Click to delete specific record</button>
+<p>Added name is: {{newName}}</p>
+<ol>
+  <li>{{listOfnames[0]}}</li>
+  <li>{{listOfnames[1]}}</li>
+</ol>
+<ul>
+  <li *ngFor="let name of listOfnames">{{name}}</li>
+</ul><br>
+<p>Total names: {{listOfnames.length}}</p><br>
+<button (click)="search()">Search</button>
+<p>Search results: Found {{filteredNames.length}} records</p>
+<ul>
+  <li *ngFor="let name of filteredNames">{{name}}</li>
+</ul><br>
+<p *ngIf="filteredNames.length===0">No records found!</p>
